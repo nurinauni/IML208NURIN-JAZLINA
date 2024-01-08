@@ -1,0 +1,79 @@
+# Rental House Booking System
+
+class RentalHouse:
+    def __init__("self, house_id, house_type, rent_amount, availability") 
+       self.house_id = house_id
+       self.house_type =house_type
+       self.rent_amount = rent_amount
+       self.availability =availability
+
+# Function to display menu
+
+def display_menu():
+    print("1. Create a new rental house")
+    print("2. View all rental house")
+    print("3. Update rental house information")
+    print("4. Delete a rental house")
+    print("5. Exit")
+
+# Function to create a new rental house
+
+def create_house():
+    house_id =input("Enter house ID:")
+    house_type =input ("Enter house type:")
+    rent_mount= float (input( " Enter rent amount: "))
+    availability= input ("Is the house available? (yes/no): ")
+    return ReturnHouse(house_id, house_type, rent_amount, availability)
+
+def view_houses(houses):
+    if not houses:
+        print("No rental houses available.")
+    else:
+        print("House ID\tHouse Type\tRent Amount\tAvailability")
+        for house in houses:
+            print (f"{house.house_id}\t{house.house_type}\t\t{house.rent}")
+
+def update_houses (house):
+    house.rent_amount= float (input("Enter new rent amount: "))
+    house.availability= input ("Is the house still available? yes/no"):
+
+def delete_house (houses, house_id):
+    for i, house in enumerate (house):
+        if house.house_id== house_id:
+            del houses [i]
+            print (f"House {house-id} deleted succesfully.")  
+            break
+    else:
+        print (f"House {house_id} not found.")    
+
+if _ _name_ _ == "_ _main_ _":
+     #Sample data
+     house= [RentalHouse("1", "Apartment", 1500.0, "yes"),
+             RentalHouse ("2", "House", 2000.0, "no")]
+     
+    while True:
+        display_menu()
+        choice= input ("Enter your choice (1-5):")
+
+        if choice== "1":
+            new_house= create_house()
+            house.append(new_house)
+            print ("Rental house created successfully.")
+        elif choice== "2" :
+            view_houses(houses)
+        elif choice== "3":
+            house_id = input ("Enter the house ID to update:")
+            for house in houses:
+                if house.house_id == house_id:
+                    update_house(house)
+                    print("Rental house informtaion update successfull:")
+                    break
+                else:
+        elif choice== "4":
+            house_id = input("Enter the house ID to delete:")
+            delete_house(houses, house_id)
+        elif choice== "5":
+            print("Existing the program.Thank you!:")
+            break
+        else:
+            print("Invalid choice.Please enter a number between 1 and 5:") 
